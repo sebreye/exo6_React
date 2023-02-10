@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Compteur } from './components/compteur/compteur';
 import TaskList from './components/tâches/tâches';
 import Devises from './components/devise/devises';
+import Formulaires from './components/formulaires/formulaires';
 function App() {
   // ajout compteur
   let [number, setNumber] = useState(0)
@@ -35,8 +36,10 @@ function App() {
         <TaskList/>
       </div>
       <div className='flex justify-center mt-10'>
-        
         <Devises/>
+      </div>
+      <div className='flex justify-center p-10'>
+        <Formulaires/>
       </div>
     </div>
   );
