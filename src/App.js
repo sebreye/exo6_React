@@ -5,6 +5,7 @@ import { Compteur } from './components/compteur/compteur';
 import TaskList from './components/tâches/tâches';
 import Devises from './components/devise/devises';
 import Formulaires from './components/formulaires/formulaires';
+import Devinettes from './components/devinettes/devinettes';
 function App() {
   // ajout compteur
   let [number, setNumber] = useState(0)
@@ -40,6 +41,9 @@ function App() {
       </div>
       <div className='flex justify-center p-10'>
         <Formulaires/>
+      </div>
+      <div className='flex justify-center p-10'>
+        <Devinettes/>
       </div>
     </div>
   );

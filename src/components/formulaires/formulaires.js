@@ -11,20 +11,24 @@ const Formulaires = () => {
     event.preventDefault();
     setError('');
 
-    if (!name || !email || !password) {
-      setError('Tous les champs sont requis');
+    if (!name) {
+      setError('le nom est requis');
+    }else if(!password){
+      setError('le mot de passe est requis')
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       setError('L\'email est invalide');
-    } else {
-      // Envoyer les données au serveur
+      
+    }else{
+
     }
+
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Nom</label>
-        <input
+        <label >Nom : </label>
+        <input className='border'
           type="text"
           name="name"
           value={name}
@@ -33,8 +37,8 @@ const Formulaires = () => {
       </div>
 
       <div>
-        <label htmlFor="email">Email</label>
-        <input
+        <label >Email : </label>
+        <input className='border'
           type="email"
           name="email"
           value={email}
@@ -42,9 +46,9 @@ const Formulaires = () => {
         />
       </div>
 
-      <div>
-        <label htmlFor="password">Mot de passe</label>
-        <input
+      <div className=''>
+        <label >Mot de passe : </label>
+        <input className='border'
           type="password"
           name="password"
           value={password}
@@ -52,9 +56,9 @@ const Formulaires = () => {
         />
       </div>
 
-      {error && <p>{error}</p>}
+      {error && <p className='text-red-600'>{error}</p>}
 
-      <button type="submit">S'inscrire</button>
+      <button className='border border-black' type="submit">S'inscrire</button>
     </form>
   );
 }
